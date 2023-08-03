@@ -1,7 +1,7 @@
 void main(){
 
-  int a = 7;
-  int b = 5;
+  const int a = 7;
+  const int b = 3;
 
   int addition = a + b;
   int subtraction = a - b;
