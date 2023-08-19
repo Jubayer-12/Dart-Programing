@@ -1,0 +1,68 @@
+class Car { 
+   
+  String brand;
+  String model;
+  int year;
+  double milesDriven;
+  
+  static int numberOfCars = 0;
+  
+  
+  Car(this.brand,this.model,this.year,this.milesDriven){
+    numberOfCars++;
+  }
+  
+  void drive(double miles){
+    
+    milesDriven += miles;
+  }
+  
+  double getMilesDriven(){
+    
+    return milesDriven;
+  }
+  
+  String getBrand(){
+    
+    return brand;
+  }
+  
+  String getModel(){
+    return model;
+  }
+    
+  int getYear(){
+    
+    return year;
+  }
+    
+  
+  int getAge(){
+    return 2023 - year;
+  }
+        
+   
+}
+
+
+
+
+void main() { 
+  
+  Car toyota20 = Car('Toyota', 'Camry', 2020, 15000.0);
+  Car honda18 = Car('Honda', 'Civic', 2018, 20000.0);
+  Car ford15 = Car('Ford', 'Mustang', 2015, 10000.0);
+  
+  toyota20.drive(3000.0);
+  honda18.drive(2000.0);
+  ford15.drive(5000.0);
+  
+  print('Car 1: ${toyota20.getBrand()} ${toyota20.getModel()} ${toyota20. getYear()} Miles: ${toyota20.getMilesDriven()} Age: ${toyota20.getAge()}');
+  print('Car 2: ${honda18.getBrand()} ${honda18.getModel()} ${honda18. getYear()} Miles: ${honda18.getMilesDriven()} Age: ${honda18.getAge()}');
+  print('Car 3: ${ford15.getBrand()} ${ford15.getModel()} ${ford15. getYear()} Miles: ${ford15.getMilesDriven()} Age: ${ford15.getAge()}');
+  
+  
+  print('Total number of cars created: ${Car.numberOfCars}');
+  
+}
+
