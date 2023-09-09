@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return const MaterialApp(
+      home: HomePage(),
+    );
+  }
+
+}
+
+class HomePage extends StatelessWidget{
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 70,
+        toolbarHeight: 100,
+        backgroundColor: Colors.green,
+        leading: const Icon(
+          Icons.add_business_sharp,
+        ),
+        title: const Text('Home', style: TextStyle(fontWeight: FontWeight.w700,fontSize:30)),
+        centerTitle: true,
+
+        actions: [
+          IconButton(
+            iconSize: 25,
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              // ...
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('This is mod 5 Assignment',
+            style: TextStyle(fontSize: 23, fontWeight: FontWeight.w600),),
+
+            Text.rich(TextSpan(
+                text: 'My ',
+                style: TextStyle(color: Color(0xFFE92366), fontSize: 25),
+                children: [
+                  TextSpan(
+                      text: 'phone ',
+                      style: TextStyle(color: Color(0xFF5CB1F5), fontSize: 17)),
+                  TextSpan(
+                      text: 'name ',
+                      style: TextStyle(
+                          color: Color(0xFFE66DFB),
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold)),
+                  TextSpan(
+                      text: 'Your phone Name',
+                      style: TextStyle(color: Color(0xFFFEA21B), fontWeight: FontWeight.w500),
+                     ),
+                ]))
+          ],
+        ),
+      ),
+    );
+  }
+
+}
